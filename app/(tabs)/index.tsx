@@ -1,10 +1,12 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import * as WebBrowser from 'expo-web-browser';
+import { Platform, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+
 
 export default function HomeScreen() {
   return (
@@ -51,6 +53,9 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
+      <TouchableOpacity style={{backgroundColor:'red', width: 100, height: 100}} onPress={()=>{
+        WebBrowser.openBrowserAsync('https://www.youtube.com/watch?v=6MAzUT1YhWE')
+      }}/>
     </ParallaxScrollView>
   );
 }
